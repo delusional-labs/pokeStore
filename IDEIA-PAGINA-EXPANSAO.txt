@@ -1,0 +1,44 @@
+IDEIA GUARDADA — Página dedicada da expansão (Caos Ascendente)
+================================================================
+Origem: botão "Saiba mais sobre a coleção" na home (seção azul,
+abaixo dos 4 produtos). Hoje ele aponta pra "#" — quando a página
+existir, apontar pra algo como /colecoes/caos-ascendente.html
+
+O QUE A PÁGINA TERIA
+--------------------
+1. HERO da expansão
+   - Logo grande + fundo com o efeito de água (reusar o canvas gooey)
+   - Data de lançamento, nº total de cartas, código da expansão
+
+2. PRODUTOS (compra individual)
+   - Os mesmos 4 da home (ETB, Booster Bundle, Booster Display,
+     Build & Battle), cada um com:
+     · galeria de fotos (frente/verso/conteúdo)
+     · descrição do que vem dentro (qtd de pacotes, promos, acessórios)
+     · preço + botão comprar
+   - PACOTES/COMBOS montados pela loja (ex: ETB + Bundle com desconto)
+
+3. LISTA COMPLETA DE CARTAS DA EXPANSÃO ("card dex")
+   - Grid organizado e filtrável:
+     · filtro por raridade (comum, incomum, rara, ex, Ilustração Rara,
+       Ilustração Rara Especial, secreta)
+     · filtro por tipo (água, fogo, planta...)
+     · busca por nome
+   - Cada carta: imagem + nº na coleção (ex: 22/167) + raridade
+   - Clique na carta → modal com zoom + efeito holográfico 3D
+     (reusar o sistema .pcard/holo-inner que já existe na home)
+   - Destaque especial pras "chase cards" (Greninja etc.) no topo
+
+4. EXTRAS DE VENDA
+   - "Probabilidade de pull" por raridade (tabela simples)
+   - Seção "cartas mais valiosas da expansão" com preço de mercado
+   - CTA fixo no fim: voltar pros produtos / adicionar à sacola
+
+ESTRUTURA TÉCNICA (quando for fazer)
+------------------------------------
+- Uma página por expansão: /colecoes/<slug>.html
+- Dados das cartas num JSON (assets/data/caos-ascendente.json)
+  → o grid renderiza a partir do JSON, fácil de replicar pra
+    Equilíbrio Perfeito e Pitch Black depois
+- Reusar: variáveis de física (--btn-raise etc.), efeito holo,
+  headline sticker, cards .product

@@ -1,0 +1,42 @@
+POKESTORE — Cópia de estudo da página Chaos Rising (Pokémon TCG)
+================================================================
+URL alvo: https://tcg.pokemon.com/pt-br/expansions/chaos-rising/
+Finalidade: estudo pessoal de efeitos/animações. Sem uso comercial.
+
+COMO RODAR
+----------
+1. Abra o Git Bash nesta pasta (C:\Users\pedro\POKESTORE)
+2. Rode:  bash baixar-pagina.sh
+3. O site será salvo na subpasta "site/"
+4. Abra: site/tcg.pokemon.com/pt-br/expansions/chaos-rising/index.html
+
+O QUE O SCRIPT BAIXA
+--------------------
+- HTML da página
+- CSS, JavaScript, imagens, fontes, vídeos referenciados
+- Assets hospedados nas CDNs do Pokémon (assets/static/images.pokemon.com)
+- Links convertidos para funcionar offline
+
+LIMITAÇÕES (importante para os efeitos!)
+----------------------------------------
+Esse site usa muito JS moderno. Efeitos que podem NÃO vir completos:
+- Texturas/shaders WebGL carregados dinamicamente
+- Animações que buscam JSON/sprites via fetch() em runtime
+- Lazy-loading de imagens (só baixa o que está no HTML inicial)
+
+PLANO B, se os efeitos quebrarem offline:
+1. Extensão do Chrome "SingleFile" — salva a página inteira renderizada
+   em 1 arquivo HTML (ótimo pra estudar o DOM final).
+2. Extensão "Save All Resources" — no DevTools, aba extra que exporta
+   TODOS os arquivos que a página realmente carregou (pega os dinâmicos).
+3. DevTools > Sources > aba Page — dá pra ver e salvar os .js dos efeitos
+   um a um (procure por gsap, three, pixi, lottie nos nomes).
+
+DICA DE ESTUDO
+--------------
+Os efeitos desse tipo de página geralmente usam:
+- GSAP + ScrollTrigger (parallax e animações on-scroll)
+- Lottie (animações vetoriais em JSON)
+- CSS transforms 3D nas cartas (efeito holográfico = gradientes +
+  mix-blend-mode + rotação seguindo o mouse)
+Procure por esses nomes nos .js baixados.
