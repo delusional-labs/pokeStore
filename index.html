@@ -367,6 +367,9 @@ html::-webkit-scrollbar{display:none}
 .shop-item__tag--cyan{color:#3dd6e9}
 .shop-item__tag--green{color:#b4f05a}
 .shop-item__tag--purple{color:#b18aff}
+.shop-item__tag--red{color:#ff8b6a}
+.shop-item__tag--pink{color:#ff7ab0}
+.shop-item__tag--blue{color:#5aa9ff}
 .shop-item__name{font-weight:700;font-size:1rem;line-height:1.3;color:#e6e8ef;
   margin-bottom:8px}
 .shop-item__price{font-family:var(--font-heading);font-size:1.45rem;color:#ffc93d;
@@ -970,15 +973,19 @@ html::-webkit-scrollbar{display:none}
   border-top:1px solid rgba(143,162,255,.25);
   box-shadow:0 -14px 40px rgba(0,0,0,.5),inset 0 2px 0 rgba(255,255,255,.05)}
 /* marca d'água gigante ao fundo */
-.footer__watermark{position:absolute;left:50%;bottom:-2.5vw;translate:-50%;
-  font-family:var(--font-heading);font-size:13.5vw;line-height:.8;
+/* GEEK STORE "entalhado" no fundo: mais escuro que o footer +
+   sombra escura em cima / luz sutil embaixo = profundidade pra DENTRO */
+.footer__watermark{display:block;text-align:center;margin:30px 0 -14px;
+  font-family:var(--font-heading);font-size:min(15vw,230px);line-height:.85;
   white-space:nowrap;pointer-events:none;user-select:none;
-  color:transparent;
-  -webkit-text-stroke:1px rgba(143,162,255,.13);
-  background:linear-gradient(to bottom,rgba(143,162,255,.09),rgba(143,162,255,0));
-  -webkit-background-clip:text;background-clip:text}
+  color:#07050f; /* mais escuro que o fundo = cavado */
+  text-shadow:
+    0 -3px 4px rgba(0,0,0,.95),          /* sombra na borda de cima (luz vem de cima) */
+    0 -1px 1px rgba(0,0,0,.9),
+    0 2px 2px rgba(143,162,255,.1),      /* borda de baixo pega um fio de luz */
+    0 1px 0 rgba(143,162,255,.14)}
 .footer__inner{position:relative;z-index:1;max-width:1180px;margin:0 auto;
-  padding:120px 28px 110px;display:flex;gap:60px;flex-wrap:wrap;
+  padding:110px 28px 30px;display:flex;gap:60px;flex-wrap:wrap;
   justify-content:space-between}
 .footer__brand{max-width:300px}
 .footer__logo{font-size:1.5rem;margin-bottom:14px;
@@ -1268,6 +1275,46 @@ html::-webkit-scrollbar{display:none}
         <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
       </div>
     </div>
+    <div class="shop-item">
+      <img class="shop-item__img" src="assets/parceiro-inicial/front.png" alt="Box Pokémon Coleção Parceiro Inicial - Série 2">
+      <div class="shop-item__tag shop-item__tag--red">Parceiro Inicial</div>
+      <div class="shop-item__name">Coleção Ilustração — Série 2</div>
+      <div class="shop-item__price">R$ 149,90</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img" src="assets/mewtwo-rocket/front.png" alt="Baralho Batalha de Liga Pokémon Mewtwo ex da Equipe Rocket">
+      <div class="shop-item__tag shop-item__tag--pink">Equipe Rocket</div>
+      <div class="shop-item__name">Batalha de Liga — Mewtwo ex</div>
+      <div class="shop-item__price">R$ 139,99</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img" src="assets/mega-charizard-x/front.webp" alt="Box Pokémon Coleção Mega Charizard X ex">
+      <div class="shop-item__tag shop-item__tag--blue">Mega Evolução</div>
+      <div class="shop-item__name">Box Coleção — Mega Charizard X ex</div>
+      <div class="shop-item__price">R$ 169,99</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img" src="assets/mega-kangaskhan/front.jpg" alt="Box Pokémon Coleção Mega Kangaskhan ex">
+      <div class="shop-item__tag shop-item__tag--blue">Mega Evolução</div>
+      <div class="shop-item__name">Box Coleção — Mega Kangaskhan ex</div>
+      <div class="shop-item__price">R$ 139,99</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
   </div>
 
   <div class="shop__more">
@@ -1448,8 +1495,6 @@ html::-webkit-scrollbar{display:none}
 
 <!-- FOOTER — bordas curvas no topo, marca d'água GEEK STORE -->
 <footer class="footer">
-  <div class="footer__watermark" aria-hidden="true">GEEK STORE</div>
-
   <div class="footer__inner">
     <div class="footer__brand">
       <div class="nav__logo footer__logo"><span class="nav__logo-ball"></span>T4KENA</div>
@@ -1492,6 +1537,8 @@ html::-webkit-scrollbar{display:none}
       </div>
     </div>
   </div>
+
+  <div class="footer__watermark" aria-hidden="true">GEEK STORE</div>
 
   <div class="footer__bottom">
     <span>© 2026 T4KENA Geek Store — todos os direitos reservados.</span>
