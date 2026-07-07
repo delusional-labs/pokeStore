@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pitch Black — Mega Evolution | GEEK STORE</title>
+<title>Todos os produtos | GEEK STORE</title>
 <link href="https://fonts.googleapis.com/css?family=Kanit:700|PT+Sans:400,700&display=swap" rel="stylesheet">
 <style>
 
@@ -1136,179 +1136,59 @@ html::-webkit-scrollbar{display:none}
 .toast.show{transform:translate(-50%,0);opacity:1}
 .toast__check{color:#8ef06a;font-size:1.1rem;font-weight:700}
 
-/* ===== estilos da página Pitch Black ===== */
+/* ===== catálogo ===== */
 /* =====================================================================
-   PÁGINA DEDICADA — PITCH BLACK
-   Preto absoluto, glow roxo (#7c3aed) + acento lima (#b8ff5c).
-   Reaproveita .pitch__kicker / .pitch__cta / .pitch__holo-card /
-   .pitch__box / .pcard__shine / .pcard__holo do stylesheet da home.
+   TODOS OS PRODUTOS — catálogo com busca + filtro por coleção
    ===================================================================== */
-body.pb{background:#04040a;color:#e6e8ef}
-.pb *{scrollbar-width:none}
-.pb-wrap{overflow:hidden}
+body.cat-body{background:
+  radial-gradient(ellipse 80% 40% at 50% 0%,rgba(255,201,61,.06),transparent 55%),
+  var(--color-black);color:#e6e8ef;min-height:100vh}
 
-/* utilidades de seção */
-.pb-section{max-width:1160px;margin:0 auto;padding:96px 24px}
-.pb-eyebrow{font-family:var(--font-heading);text-transform:uppercase;letter-spacing:.18em;
-  font-size:.8rem;color:#b8ff5c;text-align:center;margin-bottom:14px;
-  text-shadow:0 0 14px rgba(184,255,92,.4)}
-.pb-h2{font-family:var(--font-heading);text-transform:uppercase;text-align:center;
-  font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.05;color:#fff;margin:0 auto 18px;
-  letter-spacing:.01em;text-shadow:0 6px 30px rgba(124,58,237,.4)}
-.pb-h2 span{color:#b8ff5c;text-shadow:0 0 26px rgba(184,255,92,.45)}
-.pb-lead{text-align:center;color:#9aa0b0;font-size:1.05rem;line-height:1.7;
-  max-width:640px;margin:0 auto}
+.cat{max-width:1260px;margin:0 auto;padding:150px 24px 96px}
+.cat__head{text-align:center;margin-bottom:40px}
+.cat__eyebrow{font-family:var(--font-heading);text-transform:uppercase;letter-spacing:.2em;
+  font-size:.78rem;color:#ffc93d;margin-bottom:12px}
+.cat__title{font-family:var(--font-heading);text-transform:uppercase;font-size:clamp(2rem,5vw,3.2rem);
+  line-height:1;color:#fff;margin:0 0 12px}
+.cat__title span{color:#ffc93d}
+.cat__sub{color:#9aa1b5;font-size:1rem;max-width:520px;margin:0 auto}
 
-/* ---------- HERO ---------- */
-.pb-hero{position:relative;min-height:100svh;display:flex;align-items:center;
-  padding:170px 24px 90px;overflow:hidden;isolation:isolate}
-/* fundo estendido (top/height extras dão folga pro parallax não mostrar buraco) */
-.pb-hero__bg{position:absolute;left:0;right:0;top:-22%;height:144%;z-index:-3;
-  pointer-events:none;will-change:transform;
-  background:
-    radial-gradient(ellipse 66% 44% at 50% 30%,rgba(124,58,237,.28),transparent 60%),
-    radial-gradient(ellipse 46% 36% at 82% 70%,rgba(61,214,233,.11),transparent 60%),
-    radial-gradient(ellipse 40% 36% at 15% 76%,rgba(184,255,92,.06),transparent 60%),
-    #04040a}
-#pb-stars{position:absolute;left:0;right:0;top:-22%;width:100%;height:144%;z-index:-2;
-  pointer-events:none;will-change:transform}
-/* fade suave do hero pra próxima seção — mata o corte seco na borda de baixo */
-.pb-hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:44%;z-index:-1;
-  pointer-events:none;background:linear-gradient(to bottom,transparent 0,rgba(4,4,10,.6) 55%,#04040a 90%)}
-.pb-hero__inner{position:relative;z-index:1}
-.pb-scrolldown{z-index:1}
+.cat__search{position:relative;max-width:540px;margin:26px auto 0}
+.cat__search input{width:100%;padding:15px 52px 15px 22px;border-radius:99px;
+  border:1px solid rgba(255,255,255,.14);background:#12151f;color:#eef1f8;
+  font-family:var(--font-body);font-size:1rem;outline:none;transition:border-color .16s,box-shadow .16s}
+.cat__search input:focus{border-color:rgba(255,201,61,.55);box-shadow:0 0 0 3px rgba(255,201,61,.16)}
+.cat__search button{position:absolute;right:6px;top:50%;translate:0 -50%;width:42px;height:42px;
+  border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(to bottom,#ffd968,#ffc93d 55%,#e0a91f);color:#181000;transition:filter .16s}
+.cat__search button:hover{filter:brightness(1.07)}
+.cat__search button svg{width:20px;height:20px}
 
-.pb-hero__inner{max-width:1180px;margin:0 auto;width:100%;
-  display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap}
-.pb-hero__text{flex:1 1 380px;max-width:540px;display:flex;flex-direction:column;
-  align-items:center;text-align:center}
-.pb-back{display:inline-flex;align-items:center;gap:7px;color:#8b8f9e;text-decoration:none;
-  font-size:.9rem;margin-bottom:22px;transition:color .18s,gap .18s}
-.pb-back:hover{color:#b8ff5c;gap:11px}
-.pb-hero__logo{width:min(470px,86vw);margin:6px 0 22px;display:block;
-  filter:drop-shadow(0 0 40px rgba(124,58,237,.55)) drop-shadow(0 12px 22px rgba(0,0,0,.85))}
-.pb-hero__desc{color:#9aa0b0;font-size:1.08rem;line-height:1.72;margin:0 0 34px;max-width:470px}
-.pb-hero__desc b{color:#cdd2e0;font-weight:700}
-.pb-hero__actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.cat__chips{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.cat__chip{padding:9px 18px;border-radius:99px;cursor:pointer;font-family:var(--font-body);
+  font-size:.85rem;font-weight:700;color:#b9c0d4;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);transition:.16s}
+.cat__chip:hover{border-color:rgba(255,201,61,.5);color:#fff}
+.cat__chip.is-active{background:linear-gradient(180deg,#ffd968,#ffc93d);color:#181000;border-color:#e0a91f}
 
-/* botão fantasma (secundário) */
-.pb-btn{display:inline-block;font-family:var(--font-heading);text-transform:uppercase;
-  letter-spacing:.06em;font-size:1rem;padding:14px 34px;border-radius:99px;cursor:pointer;
-  text-decoration:none;transition:transform var(--speed) var(--ease-soft),
-  border-color var(--speed) var(--ease-soft),background var(--speed) var(--ease-soft)}
-.pb-btn--ghost{color:#eef1f8;border:2px solid rgba(184,255,92,.35);background:rgba(184,255,92,.05)}
-.pb-btn--ghost:hover{border-color:#b8ff5c;background:rgba(184,255,92,.12);transform:translateY(-2px)}
+.cat__count{margin-top:20px;font-size:.86rem;color:#7d8398;font-family:var(--font-heading);
+  text-transform:uppercase;letter-spacing:.08em}
 
-/* trio do hero (box + 2 cartas holo) */
-.pb-hero__visual{flex:1 1 380px;display:flex;align-items:center;justify-content:center}
-.pb-hero__visual .pitch__box{width:min(360px,70vw)}
-@media(max-width:640px){.pb-hero__visual .pitch__box{width:190px}}
+.cat__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(224px,1fr));gap:22px}
+.cat__grid .shop-item{flex:initial;width:auto}
+.cat__grid .shop-item.is-hidden{display:none}
 
-/* seta pra baixo indicando scroll */
-.pb-scrolldown{position:absolute;bottom:26px;left:50%;translate:-50% 0;z-index:1;
-  color:#5a5f70;animation:pbBob 1.8s ease-in-out infinite}
-@keyframes pbBob{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(7px);opacity:1}}
+.cat__empty{text-align:center;padding:70px 20px;color:#7d8398;font-size:1.05rem}
+.cat__empty svg{width:52px;height:52px;opacity:.4;margin-bottom:16px;display:block;margin-left:auto;margin-right:auto}
 
-/* ---------- FAIXA DE STATS ---------- */
-.pb-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
-  max-width:940px;margin:0 auto;padding:70px 24px 0}
-.pb-stat{text-align:center;padding:28px 18px;border-radius:18px;min-height:126px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:linear-gradient(180deg,#111019,#08080e);
-  border:1px solid rgba(124,58,237,.24);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 20px 40px -22px rgba(0,0,0,.9);
-  transition:transform var(--speed) var(--ease-soft),border-color var(--speed) var(--ease-soft)}
-.pb-stat:hover{transform:translateY(-4px);border-color:rgba(184,255,92,.4)}
-.pb-stat__num{font-family:var(--font-heading);font-size:2.3rem;line-height:1;
-  background:linear-gradient(180deg,#d2ff8a,#93da38);-webkit-background-clip:text;
-  background-clip:text;color:transparent;margin-bottom:10px}
-.pb-stat__label{font-size:.82rem;color:#8b8f9e;text-transform:uppercase;letter-spacing:.07em;line-height:1.35}
-@media(max-width:720px){.pb-stats{grid-template-columns:repeat(2,1fr);padding-top:52px}}
-
-/* ---------- CARTAS EM DESTAQUE ---------- */
-.pb-cards{display:flex;gap:56px;justify-content:center;flex-wrap:wrap;margin-top:52px}
-.pb-cardshow{flex:0 1 320px;display:flex;flex-direction:column;align-items:center;text-align:center}
-/* reaproveita .pitch__holo-card mas desfaz a rotação/margens do trio */
-.pb-cardshow .pitch__holo-card{width:300px;rotate:0deg;margin:0}
-.pb-cardshow .pitch__holo-card:first-child,
-.pb-cardshow .pitch__holo-card:last-child{rotate:0deg;margin:0}
-.pb-cardshow__name{font-family:var(--font-heading);text-transform:uppercase;font-size:1.5rem;
-  color:#fff;margin:26px 0 10px;letter-spacing:.02em}
-.pb-cardshow__meta{display:flex;gap:8px;justify-content:center;margin-bottom:14px;flex-wrap:wrap}
-.pb-chip{font-family:var(--font-heading);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;
-  padding:5px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.16);color:#c8cdda}
-.pb-chip--hp{color:#ff8a8a;border-color:rgba(255,138,138,.4)}
-.pb-chip--dark{color:#b18aff;border-color:rgba(124,58,237,.5)}
-.pb-chip--volt{color:#5aa9ff;border-color:rgba(90,169,255,.5)}
-.pb-chip--sar{color:#b8ff5c;border-color:rgba(184,255,92,.5)}
-.pb-cardshow__flavor{color:#9aa0b0;font-size:.96rem;line-height:1.65;max-width:330px}
-.pb-cardshow__illu{margin-top:12px;font-size:.78rem;color:#5f6474;letter-spacing:.04em}
-
-/* ---------- SOBRE A COLEÇÃO ---------- */
-.pb-about{display:flex;gap:64px;align-items:center;justify-content:center;flex-wrap:wrap}
-.pb-about__box{flex:0 1 380px;max-width:420px}
-.pb-about__box img{width:100%;
-  filter:drop-shadow(0 30px 50px rgba(0,0,0,.9)) drop-shadow(0 0 40px rgba(124,58,237,.35));
-  animation:pitchFloat 6s ease-in-out infinite}
-.pb-about__text{flex:1 1 380px;max-width:520px}
-.pb-about__text .pb-eyebrow,.pb-about__text .pb-h2{text-align:left;margin-left:0}
-.pb-about__text .pb-h2{margin-bottom:16px}
-.pb-about__p{color:#9aa0b0;font-size:1.02rem;line-height:1.75;margin:0 0 24px}
-.pb-feats{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px}
-.pb-feats li{display:flex;gap:12px;align-items:flex-start;color:#cdd2e0;font-size:.98rem;line-height:1.45}
-.pb-feats svg{flex-shrink:0;width:22px;height:22px;margin-top:1px;color:#b8ff5c}
-.pb-feats b{color:#fff}
-/* barra de compra da ETB dentro do "Sobre" (reusa .shop-item, mas vira barra horizontal) */
-.pb-buybar{margin-top:34px;display:flex !important;flex-direction:row !important;align-items:center;
-  gap:18px;width:auto;text-align:left;padding:16px !important;
-  background:linear-gradient(180deg,#121019,#0a0a10) !important;
-  border:1px solid rgba(124,58,237,.32) !important;border-radius:16px;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 22px 44px -24px rgba(0,0,0,.9) !important}
-.pb-buybar:hover{transform:none}
-.pb-buybar .shop-item__img{width:76px;height:76px;flex-shrink:0;margin:0;border-radius:11px}
-.pb-buybar__info{flex:1;min-width:0}
-.pb-buybar .shop-item__name{margin:0 0 2px;font-family:var(--font-heading);text-transform:uppercase;
-  letter-spacing:.02em;font-size:1.05rem;color:#fff}
-.pb-buybar .shop-item__price{margin:0 0 12px;font-family:var(--font-heading);font-size:1.5rem;color:#b8ff5c}
-.pb-buybar__actions{display:flex;gap:10px;flex-wrap:wrap}
-.pb-buybar .shop-item__buy,.pb-buybar .shop-item__cart{margin:0;padding:10px 18px;display:inline-block}
-@media(max-width:520px){.pb-buybar{flex-wrap:wrap}.pb-buybar__actions{width:100%}}
-
-/* ---------- PRODUTOS — todos em uma linha só ---------- */
-#pb-produtos{max-width:1300px}
-.pb-grid{display:flex;flex-wrap:nowrap;gap:16px;overflow-x:auto;
-  width:fit-content;max-width:100%;margin:52px auto 0;padding:6px 2px 12px;
-  scroll-snap-type:x proximity}
-.pb-grid .shop-item{flex:0 0 178px;width:178px;padding:16px 14px;scroll-snap-align:start;
-  border-color:rgba(124,58,237,.28)}
-.pb-grid .shop-item__img{margin-bottom:12px}
-.pb-grid .shop-item__price{font-size:1.25rem;margin-bottom:12px}
-.pb-grid .shop-item:hover{border-color:rgba(184,255,92,.5);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 2px 2px rgba(0,0,0,.5),
-    0 18px 32px rgba(0,0,0,.55),0 44px 74px -22px rgba(124,58,237,.5)}
-
-/* ---------- FAIXA CTA FINAL ---------- */
-.pb-band{position:relative;text-align:center;padding:104px 24px;overflow:hidden;isolation:isolate;
-  border-top:1px solid rgba(124,58,237,.2);border-bottom:1px solid rgba(124,58,237,.2)}
-.pb-band::before{content:'';position:absolute;inset:0;z-index:-1;
-  background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(124,58,237,.28),transparent 65%);
-  animation:pitchBreath 7s ease-in-out infinite}
-.pb-band .pb-h2{margin-bottom:14px}
-.pb-band .pb-lead{margin-bottom:32px}
-.pb-band__actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-
-/* ---------- responsivo ---------- */
-@media(max-width:860px){
-  .pb-section{padding:72px 22px}
-  .pb-hero{padding:150px 22px 80px}
-  .pb-about__text .pb-eyebrow,.pb-about__text .pb-h2{text-align:center}
-  .pb-about__text{text-align:center}
-  .pb-feats li{text-align:left}
+@media(max-width:600px){
+  .cat{padding:120px 16px 60px}
+  .cat__grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
 }
 
 </style>
 </head>
-<body class="pb">
+<body class="cat-body">
 
 <nav class="nav">
   <span class="screw"></span><span class="screw"></span><span class="screw"></span><span class="screw"></span>
@@ -1387,158 +1267,117 @@ body.pb{background:#04040a;color:#e6e8ef}
   </div>
 </nav>
 
-<div class="pb-wrap">
+<div class="cat">
+  <header class="cat__head">
+    <div class="cat__eyebrow">Catálogo completo</div>
+    <h1 class="cat__title">Todos os <span>produtos</span></h1>
+    <p class="cat__sub">Toda a loja em um lugar só. Busque por nome ou filtre por coleção.</p>
 
-<!-- ============ HERO ============ -->
-<header class="pb-hero">
-  <div class="pb-hero__bg"></div>
-  <canvas id="pb-stars"></canvas>
+    <form class="cat__search" role="search" onsubmit="return false">
+      <input id="cat-q" type="text" placeholder="Buscar produto..." aria-label="Buscar produto" autocomplete="off">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+    </form>
 
-  <div class="pb-hero__inner">
-    <div class="pb-hero__text">
-      <a class="pb-back" href="index.html">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
-        Voltar para a loja
-      </a>
-      <div class="pitch__kicker">Coleção · Era Megaevolução</div>
-      <h1 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Pitch Black — Mega Evolution</h1>
-      <img class="pb-hero__logo" src="assets/pitch-black/Pitch_Black_logo.webp" alt="Mega Evolution — Pitch Black">
-      <p class="pb-hero__desc">Escuridão total, brilho de outro mundo. <b>Mega Darkrai ex</b> e
-        <b>Mega Zeraora ex</b> lideram a coleção mais sombria da era Megaevolução — ilustrações
-        <b>SAR</b> de tirar o fôlego, foils texturizados e a Elite Trainer Box mais desejada do ano.</p>
-      <div class="pb-hero__actions">
-        <a class="pitch__cta" href="#pb-produtos">Ver produtos</a>
-        <a class="pb-btn pb-btn--ghost" href="#pb-cartas">Conhecer as cartas</a>
-      </div>
+    <div class="cat__chips" id="cat-chips">
+      <button class="cat__chip is-active" data-cat="todos" type="button">Todos</button>
+      <button class="cat__chip" data-cat="Caos Ascendente" type="button">Caos Ascendente</button>
+      <button class="cat__chip" data-cat="Equilíbrio Perfeito" type="button">Equilíbrio Perfeito</button>
+      <button class="cat__chip" data-cat="Pitch Black" type="button">Pitch Black</button>
+      <button class="cat__chip" data-cat="Mega Evolução" type="button">Mega Evolução</button>
+      <button class="cat__chip" data-cat="Equipe Rocket" type="button">Equipe Rocket</button>
+      <button class="cat__chip" data-cat="Parceiro Inicial" type="button">Parceiro Inicial</button>
     </div>
 
-    <div class="pb-hero__visual">
-      <div class="pitch__right">
-        <div class="pitch__holo-card">
-          <div class="holo-inner">
-            <img src="assets/pitch-black/m5-114_mega-darkrai-ex.webp" alt="Mega Darkrai ex">
-            <div class="pcard__shine"></div>
-            <div class="pcard__holo"></div>
-          </div>
-        </div>
-        <img class="pitch__box" src="assets/pitch-black/etb-sem-fundo.png" alt="Elite Trainer Box Pitch Black">
-        <div class="pitch__holo-card">
-          <div class="holo-inner">
-            <img src="assets/pitch-black/m5-112_mega-zeraora-ex.webp" alt="Mega Zeraora ex">
-            <div class="pcard__shine"></div>
-            <div class="pcard__holo"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <div class="cat__count" id="cat-count"></div>
+  </header>
 
-  <div class="pb-scrolldown" aria-hidden="true">
-    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10l5 5 5-5"/></svg>
-  </div>
-</header>
-
-<!-- ============ STATS ============ -->
-<section class="pb-stats" aria-label="Destaques da coleção">
-  <div class="pb-stat"><div class="pb-stat__num">2</div><div class="pb-stat__label">Mega ex lendários</div></div>
-  <div class="pb-stat"><div class="pb-stat__num">SAR</div><div class="pb-stat__label">Ilustração especial rara</div></div>
-  <div class="pb-stat"><div class="pb-stat__num">6</div><div class="pb-stat__label">Produtos na coleção</div></div>
-  <div class="pb-stat"><div class="pb-stat__num">ME02</div><div class="pb-stat__label">Bloco Megaevolução</div></div>
-</section>
-
-<!-- ============ CARTAS EM DESTAQUE ============ -->
-<section class="pb-section" id="pb-cartas">
-  <div class="pb-eyebrow">As lendas da escuridão</div>
-  <h2 class="pb-h2">Duas <span>Mega ex</span> de outro mundo</h2>
-  <p class="pb-lead">Passe o mouse sobre as cartas para ver o efeito holográfico ganhar vida —
-    o mesmo brilho que salta do foil real na sua mão.</p>
-
-  <div class="pb-cards">
-    <div class="pb-cardshow">
-      <div class="pitch__holo-card">
-        <div class="holo-inner">
-          <img src="assets/pitch-black/m5-114_mega-darkrai-ex.webp" alt="Carta Mega Darkrai ex">
-          <div class="pcard__shine"></div>
-          <div class="pcard__holo"></div>
-        </div>
-      </div>
-      <div class="pb-cardshow__name">Mega Darkrai ex</div>
-      <div class="pb-cardshow__meta">
-        <span class="pb-chip pb-chip--hp">HP 280</span>
-        <span class="pb-chip pb-chip--dark">Escuridão</span>
-        <span class="pb-chip pb-chip--sar">SAR</span>
-      </div>
-      <p class="pb-cardshow__flavor">Emerge do vazio entre os sonhos e ataca de onde ninguém olha.
-        A ilustração de página inteira transforma o pesadelo em obra de arte — escuridão pura, texturizada.</p>
-      <div class="pb-cardshow__illu">Ilustração: Akira Egawa · 114/081</div>
-    </div>
-
-    <div class="pb-cardshow">
-      <div class="pitch__holo-card">
-        <div class="holo-inner">
-          <img src="assets/pitch-black/m5-112_mega-zeraora-ex.webp" alt="Carta Mega Zeraora ex">
-          <div class="pcard__shine"></div>
-          <div class="pcard__holo"></div>
-        </div>
-      </div>
-      <div class="pb-cardshow__name">Mega Zeraora ex</div>
-      <div class="pb-cardshow__meta">
-        <span class="pb-chip pb-chip--hp">HP 270</span>
-        <span class="pb-chip pb-chip--volt">Elétrico</span>
-        <span class="pb-chip pb-chip--sar">SAR</span>
-      </div>
-      <p class="pb-cardshow__flavor">Um relâmpago que rasga o breu. Trovão puro em foil espelhado,
-        com traços elétricos que parecem se mover conforme a carta pega a luz.</p>
-      <div class="pb-cardshow__illu">Ilustração: GIDORA · 112/081</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SOBRE A COLEÇÃO ============ -->
-<section class="pb-section" id="pb-sobre">
-  <div class="pb-about">
-    <div class="pb-about__box">
-      <img src="assets/pitch-black/etb-sem-fundo.png" alt="Elite Trainer Box Pitch Black">
-    </div>
-    <div class="pb-about__text">
-      <div class="pb-eyebrow">Sobre a coleção</div>
-      <h2 class="pb-h2">A era mais <span>sombria</span> já impressa</h2>
-      <p class="pb-about__p">Pitch Black leva a Megaevolução ao extremo: um tema preto absoluto onde a
-        cor só aparece no brilho de outro mundo das cartas. Cada produto foi pensado para colecionador
-        e jogador — do avulso à Elite Trainer Box completa.</p>
-      <ul class="pb-feats">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Cartas SAR de ilustração especial</b> — arte de página inteira, as mais raras do set.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Elite Trainer Box exclusiva</b> com acessórios temáticos e acabamento fosco.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Foils texturizados</b> que reagem à luz — o holográfico sai da tela e vai pra sua mão.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Envio para todo o Brasil</b> com pré-venda aberta e estoque limitado.</span></li>
-      </ul>
-
-      <!-- barra de compra da ETB (reusa .shop-item pra ligar no carrinho) -->
-      <div class="pb-buybar shop-item">
-        <img class="shop-item__img" src="assets/pitch-black/amazon_01_81nYHGhNIOL.jpg" alt="Elite Trainer Box Pitch Black">
-        <div class="pb-buybar__info">
-          <div class="shop-item__name">Elite Trainer Box</div>
-          <div class="shop-item__price">R$ 379,90</div>
-          <div class="pb-buybar__actions">
-            <a class="shop-item__buy" href="#">Comprar agora</a>
-            <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PRODUTOS ============ -->
-<section class="pb-section" id="pb-produtos">
-  <div class="pb-eyebrow">Garanta a sua</div>
-  <h2 class="pb-h2">Produtos da <span>coleção</span></h2>
-  <p class="pb-lead">Todos os itens Pitch Black em um só lugar. Adicione ao carrinho — ele te acompanha
-    de volta pra loja.</p>
-
-  <div class="pb-grid">
+  <div class="cat__grid" id="cat-grid">
+    
     <div class="shop-item">
-      <img class="shop-item__img" src="assets/pitch-black/amazon_01_81nYHGhNIOL.jpg" alt="Elite Trainer Box Pitch Black">
+      <img class="shop-item__img shop-item__img--dark" src="assets/chaos/etb.png" alt="">
+      <div class="shop-item__tag shop-item__tag--cyan">Caos Ascendente</div>
+      <div class="shop-item__name">Coleção Treinador Avançado</div>
+      <div class="shop-item__price">R$ 299,90</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img shop-item__img--dark" src="assets/chaos/booster-bundle.png" alt="">
+      <div class="shop-item__tag shop-item__tag--cyan">Caos Ascendente</div>
+      <div class="shop-item__name">Combo de boosters</div>
+      <div class="shop-item__price">R$ 189,90</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img shop-item__img--dark" src="assets/chaos/booster-display.png" alt="">
+      <div class="shop-item__tag shop-item__tag--cyan">Caos Ascendente</div>
+      <div class="shop-item__name">Expositor de boosters</div>
+      <div class="shop-item__price">R$ 1.349,00</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img shop-item__img--dark" src="assets/chaos/build-battle.png" alt="">
+      <div class="shop-item__tag shop-item__tag--cyan">Caos Ascendente</div>
+      <div class="shop-item__name">Kit Preparar e Batalhar</div>
+      <div class="shop-item__price">R$ 129,90</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img shop-item__img--dark" src="assets/equilibrio/etb.png" alt="">
+      <div class="shop-item__tag shop-item__tag--green">Equilíbrio Perfeito</div>
+      <div class="shop-item__name">Coleção Treinador Avançado</div>
+      <div class="shop-item__price">R$ 319,90</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img shop-item__img--dark" src="assets/equilibrio/booster-bundle.png" alt="">
+      <div class="shop-item__tag shop-item__tag--green">Equilíbrio Perfeito</div>
+      <div class="shop-item__name">Combo de boosters</div>
+      <div class="shop-item__price">R$ 199,90</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img shop-item__img--dark" src="assets/equilibrio/booster-display.png" alt="">
+      <div class="shop-item__tag shop-item__tag--green">Equilíbrio Perfeito</div>
+      <div class="shop-item__name">Expositor de boosters</div>
+      <div class="shop-item__price">R$ 1.399,00</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img shop-item__img--dark" src="assets/equilibrio/build-battle.png" alt="">
+      <div class="shop-item__tag shop-item__tag--green">Equilíbrio Perfeito</div>
+      <div class="shop-item__name">Kit Preparar e Batalhar</div>
+      <div class="shop-item__price">R$ 139,90</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img" src="assets/pitch-black/amazon_01_81nYHGhNIOL.jpg" alt="">
+      <div class="shop-item__tag shop-item__tag--purple">Pitch Black</div>
       <div class="shop-item__name">Elite Trainer Box</div>
       <div class="shop-item__price">R$ 379,90</div>
       <div class="shop-item__actions">
@@ -1547,7 +1386,8 @@ body.pb{background:#04040a;color:#e6e8ef}
       </div>
     </div>
     <div class="shop-item">
-      <img class="shop-item__img" src="assets/pitch-black/amazon_02_91TePN4juZL.jpg" alt="Booster Bundle Pitch Black">
+      <img class="shop-item__img" src="assets/pitch-black/amazon_02_91TePN4juZL.jpg" alt="">
+      <div class="shop-item__tag shop-item__tag--purple">Pitch Black</div>
       <div class="shop-item__name">Booster Bundle</div>
       <div class="shop-item__price">R$ 219,90</div>
       <div class="shop-item__actions">
@@ -1556,7 +1396,8 @@ body.pb{background:#04040a;color:#e6e8ef}
       </div>
     </div>
     <div class="shop-item">
-      <img class="shop-item__img" src="assets/pitch-black/amazon_03_81V-xgddQTL.jpg" alt="Booster Display Pitch Black">
+      <img class="shop-item__img" src="assets/pitch-black/amazon_03_81V-xgddQTL.jpg" alt="">
+      <div class="shop-item__tag shop-item__tag--purple">Pitch Black</div>
       <div class="shop-item__name">Booster Display</div>
       <div class="shop-item__price">R$ 1.549,00</div>
       <div class="shop-item__actions">
@@ -1565,7 +1406,8 @@ body.pb{background:#04040a;color:#e6e8ef}
       </div>
     </div>
     <div class="shop-item">
-      <img class="shop-item__img" src="assets/pitch-black/amazon_04_81rrNfrzQaL.jpg" alt="Coleção Especial Pitch Black">
+      <img class="shop-item__img" src="assets/pitch-black/amazon_04_81rrNfrzQaL.jpg" alt="">
+      <div class="shop-item__tag shop-item__tag--purple">Pitch Black</div>
       <div class="shop-item__name">Coleção Especial</div>
       <div class="shop-item__price">R$ 259,90</div>
       <div class="shop-item__actions">
@@ -1574,7 +1416,8 @@ body.pb{background:#04040a;color:#e6e8ef}
       </div>
     </div>
     <div class="shop-item">
-      <img class="shop-item__img" src="assets/pitch-black/amazon_05_711PcDqsz7L.jpg" alt="Booster Avulso Pitch Black">
+      <img class="shop-item__img" src="assets/pitch-black/amazon_05_711PcDqsz7L.jpg" alt="">
+      <div class="shop-item__tag shop-item__tag--purple">Pitch Black</div>
       <div class="shop-item__name">Booster Avulso</div>
       <div class="shop-item__price">R$ 34,90</div>
       <div class="shop-item__actions">
@@ -1583,7 +1426,8 @@ body.pb{background:#04040a;color:#e6e8ef}
       </div>
     </div>
     <div class="shop-item">
-      <img class="shop-item__img" src="assets/pitch-black/amazon_06_71-PIF0MGrL.jpg" alt="Mini Lata Pitch Black">
+      <img class="shop-item__img" src="assets/pitch-black/amazon_06_71-PIF0MGrL.jpg" alt="">
+      <div class="shop-item__tag shop-item__tag--purple">Pitch Black</div>
       <div class="shop-item__name">Mini Lata</div>
       <div class="shop-item__price">R$ 89,90</div>
       <div class="shop-item__actions">
@@ -1591,20 +1435,53 @@ body.pb{background:#04040a;color:#e6e8ef}
         <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
       </div>
     </div>
+    <div class="shop-item">
+      <img class="shop-item__img" src="assets/parceiro-inicial/front.png" alt="Box Pokémon Coleção Parceiro Inicial - Série 2">
+      <div class="shop-item__tag shop-item__tag--red">Parceiro Inicial</div>
+      <div class="shop-item__name">Coleção Ilustração — Série 2</div>
+      <div class="shop-item__price">R$ 149,90</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img" src="assets/mewtwo-rocket/front.png" alt="Baralho Batalha de Liga Pokémon Mewtwo ex da Equipe Rocket">
+      <div class="shop-item__tag shop-item__tag--pink">Equipe Rocket</div>
+      <div class="shop-item__name">Batalha de Liga — Mewtwo ex</div>
+      <div class="shop-item__price">R$ 139,99</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img" src="assets/mega-charizard-x/front.webp" alt="Box Pokémon Coleção Mega Charizard X ex">
+      <div class="shop-item__tag shop-item__tag--blue">Mega Evolução</div>
+      <div class="shop-item__name">Box Coleção — Mega Charizard X ex</div>
+      <div class="shop-item__price">R$ 169,99</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+    <div class="shop-item">
+      <img class="shop-item__img" src="assets/mega-kangaskhan/front.jpg" alt="Box Pokémon Coleção Mega Kangaskhan ex">
+      <div class="shop-item__tag shop-item__tag--blue">Mega Evolução</div>
+      <div class="shop-item__name">Box Coleção — Mega Kangaskhan ex</div>
+      <div class="shop-item__price">R$ 139,99</div>
+      <div class="shop-item__actions">
+        <a class="shop-item__buy" href="#">Comprar agora</a>
+        <a class="shop-item__cart" href="#">Adicionar ao carrinho</a>
+      </div>
+    </div>
+  
   </div>
-</section>
 
-<!-- ============ CTA FINAL ============ -->
-<section class="pb-band">
-  <div class="pb-eyebrow">Pré-venda aberta</div>
-  <h2 class="pb-h2">Antes de sumir na <span>escuridão</span></h2>
-  <p class="pb-lead">Estoque limitado. Garanta a Elite Trainer Box e as Mega ex antes que a noite feche.</p>
-  <div class="pb-band__actions">
-    <a class="pitch__cta" href="#pb-produtos">Ver produtos</a>
-    <a class="pb-btn pb-btn--ghost" href="index.html">Voltar para a loja</a>
+  <div class="cat__empty" id="cat-empty" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    Nenhum produto encontrado. Tente outra busca ou coleção.
   </div>
-</section>
-
 </div>
 
 
@@ -1680,68 +1557,41 @@ body.pb{background:#04040a;color:#e6e8ef}
 <div class="toast" id="toast"><span class="toast__check">✓</span><span id="toast-msg"></span></div>
 
 <script>
-document.querySelectorAll('.pcard, .chaos__carta-wrap, .pitch__holo-card').forEach(card => {
-  const inner = card.querySelector('.pcard__inner, .holo-inner');
-  card.addEventListener('pointermove', e => {
-    const r = card.getBoundingClientRect();
-    const px = (e.clientX - r.left) / r.width;   // 0 → 1
-    const py = (e.clientY - r.top) / r.height;
-    const rotY = (px - 0.5) * 24;  // graus
-    const rotX = (0.5 - py) * 24;
-    inner.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.04)`;
-    inner.style.setProperty('--mx', `${px*100}%`);
-    inner.style.setProperty('--my', `${py*100}%`);
-  });
-  card.addEventListener('pointerleave', () => {
-    inner.style.transform = 'rotateX(0) rotateY(0) scale(1)';
-  });
-});
-
-/* faíscas roxas/lima subindo no hero */
+/* catálogo: busca ao vivo + filtro por coleção; lê ?q= da navbar */
 (() => {
-  const c = document.getElementById('pb-stars'); if (!c) return;
-  const ctx = c.getContext('2d');
-  let W, H, ps;
-  function resize(){
-    W = c.width = c.offsetWidth; H = c.height = c.offsetHeight;
-    const n = Math.max(24, Math.min(80, Math.floor(W*H/20000)));
-    ps = Array.from({length:n}, () => ({
-      x: Math.random()*W, y: Math.random()*H,
-      r: Math.random()*1.6+0.4, s: Math.random()*0.35+0.08,
-      a: Math.random()*0.5+0.2,
-      col: Math.random()<0.5 ? '124,58,237' : '184,255,92'
-    }));
+  const q = document.getElementById('cat-q');
+  const grid = document.getElementById('cat-grid');
+  const items = Array.prototype.slice.call(grid.querySelectorAll('.shop-item'));
+  const chips = Array.prototype.slice.call(document.querySelectorAll('.cat__chip'));
+  const count = document.getElementById('cat-count');
+  const empty = document.getElementById('cat-empty');
+  let cat = 'todos';
+  const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  function apply(){
+    const query = norm(q.value.trim());
+    let shown = 0;
+    items.forEach(it => {
+      const name = norm(it.querySelector('.shop-item__name').textContent);
+      const tagEl = it.querySelector('.shop-item__tag');
+      const tag = tagEl ? tagEl.textContent.trim() : '';
+      const okCat = cat === 'todos' || tag === cat;
+      const okQ = !query || name.includes(query) || norm(tag).includes(query);
+      const show = okCat && okQ;
+      it.classList.toggle('is-hidden', !show);
+      if (show) shown++;
+    });
+    count.textContent = shown + (shown === 1 ? ' produto' : ' produtos');
+    empty.hidden = shown !== 0;
   }
-  resize(); addEventListener("resize", resize);
-  (function loop(){
-    ctx.clearRect(0,0,W,H);
-    for (const p of ps){
-      p.y -= p.s; if (p.y < -4){ p.y = H+4; p.x = Math.random()*W; }
-      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283);
-      ctx.fillStyle = 'rgba(' + p.col + ',' + p.a + ')';
-      ctx.fill();
-    }
-    requestAnimationFrame(loop);
-  })();
-})();
-
-/* parallax do fundo do hero — nebulosa e faíscas se movem mais devagar que o scroll */
-(() => {
-  const hero = document.querySelector('.pb-hero');
-  const bg = document.querySelector('.pb-hero__bg');
-  const stars = document.getElementById('pb-stars');
-  if (!hero) return;
-  let ticking = false;
-  function update(){
-    const y = window.scrollY || window.pageYOffset || 0;
-    if (y <= hero.offsetHeight + 140) {
-      if (bg)    bg.style.transform    = 'translate3d(0,' + (y * 0.45).toFixed(1) + 'px,0)';
-      if (stars) stars.style.transform = 'translate3d(0,' + (y * 0.22).toFixed(1) + 'px,0)';
-    }
-    ticking = false;
-  }
-  addEventListener('scroll', () => { if (!ticking){ requestAnimationFrame(update); ticking = true; } }, {passive:true});
-  update();
+  q.addEventListener('input', apply);
+  document.querySelector('.cat__search').addEventListener('submit', e => e.preventDefault());
+  chips.forEach(c => c.addEventListener("click", () => {
+    chips.forEach(x => x.classList.toggle('is-active', x === c));
+    cat = c.dataset.cat; apply();
+  }));
+  const urlq = new URLSearchParams(location.search).get('q');
+  if (urlq) q.value = urlq;
+  apply();
 })();
 
 /* ============================================================

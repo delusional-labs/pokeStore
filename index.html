@@ -1149,22 +1149,22 @@ html::-webkit-scrollbar{display:none}
   <span class="screw"></span><span class="screw"></span><span class="screw"></span><span class="screw"></span>
   <div class="nav__logo"><span class="nav__logo-ball"></span>GEEK STORE</div>
 
-  <div class="nav__ball" title="Coleções"><span>COLEÇÕES</span></div>
+  <a class="nav__ball" href="produtos.html" title="Ver todos os produtos"><span>COLEÇÕES</span></a>
 
   <div class="nav__links">
-    <a class="nav__btn" href="#" title="Cartas raras">
+    <a class="nav__btn" href="produtos.html" title="Cartas raras">
       <svg viewBox="0 0 24 24" fill="#f5c542" stroke="#a87c10" stroke-width="1" stroke-linejoin="round">
         <path d="M12 2.5l2.8 6 6.5.7-4.9 4.4 1.4 6.4L12 16.6 6.2 20l1.4-6.4L2.7 9.2l6.5-.7z"/>
       </svg>
     </a>
-    <a class="nav__btn" href="#" title="Decks e boosters">
+    <a class="nav__btn" href="produtos.html?q=booster" title="Decks e boosters">
       <svg viewBox="0 0 24 24" fill="none" stroke="#8ab8ff" stroke-width="1.6" stroke-linejoin="round">
         <rect x="7" y="3" width="12" height="16" rx="2" fill="#2b4a8c" stroke="#8ab8ff"/>
         <rect x="4" y="6" width="12" height="16" rx="2" fill="#3a63b8" stroke="#a9c8ff"/>
         <circle cx="10" cy="14" r="3" fill="#dce9ff" stroke="none"/>
       </svg>
     </a>
-    <a class="nav__btn" href="#" title="Vender cartas">
+    <a class="nav__btn" href="conta.html" title="Vender cartas">
       <svg viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="9" fill="#f5c542" stroke="#a87c10" stroke-width="1.4"/>
         <circle cx="12" cy="12" r="6" fill="none" stroke="#c79a1e" stroke-width="1.2"/>
@@ -1172,20 +1172,20 @@ html::-webkit-scrollbar{display:none}
           fill="none" stroke="#7a5c08" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
     </a>
-    <a class="nav__btn" href="#" title="Comunidade">
+    <a class="nav__btn" href="#comunidade" title="Comunidade">
       <svg viewBox="0 0 24 24" fill="#ffd94d" stroke="#b8930f" stroke-width="1" stroke-linejoin="round">
         <path d="M13.5 2L5 13.5h5L9.5 22 19 10h-5.5z"/>
       </svg>
     </a>
   </div>
 
-  <div class="nav__search">
-    <input type="text" placeholder="Buscar cartas, decks, expansões...">
-    <span class="lupa">🔍</span>
+  <form class="nav__search" action="produtos.html" method="get" role="search">
+    <input type="text" name="q" placeholder="Buscar cartas, decks, expansões..." aria-label="Buscar produtos" autocomplete="off">
+    <button class="lupa" type="submit" aria-label="Buscar" style="pointer-events:auto;cursor:pointer;background:none;border:none;font-size:inherit;padding:0">🔍</button>
     <div class="nav__leds"><i></i><i></i><i></i></div>
-  </div>
+  </form>
 
-  <a class="nav__btn" href="#" title="Minha conta">
+  <a class="nav__btn" href="conta.html" title="Minha conta">
     <svg viewBox="0 0 24 24" fill="none" stroke="#e8e8e8" stroke-width="1.8" stroke-linecap="round">
       <circle cx="12" cy="8" r="3.6"/>
       <path d="M4.8 20c.9-3.6 3.8-5.6 7.2-5.6s6.3 2 7.2 5.6"/>
@@ -1465,7 +1465,7 @@ html::-webkit-scrollbar{display:none}
   </div>
 
   <div class="shop__more">
-    <a class="shop__more-btn" href="#">Ver todos os produtos</a>
+    <a class="shop__more-btn" href="produtos.html">Ver todos os produtos</a>
   </div>
 </section>
 
@@ -1618,8 +1618,9 @@ html::-webkit-scrollbar{display:none}
       uma coleção nova entrar na loja. Salve seus itens favoritos e receba
       alertas de pré-venda antes de todo mundo.</p>
 
-    <form class="stay__form" onsubmit="return false">
-      <input class="stay__input" type="email" placeholder="Seu melhor e-mail">
+    <form class="stay__form" action="conta.html" method="get">
+      <input class="stay__input" type="email" name="email" placeholder="Seu melhor e-mail" required>
+      <input type="hidden" name="modo" value="criar">
       <button class="stay__btn" type="submit">Criar conta grátis</button>
     </form>
 
@@ -1674,7 +1675,7 @@ html::-webkit-scrollbar{display:none}
         <a href="#">Política de cookies</a>
         <a href="#">Trabalhe conosco</a>
       </div>
-      <div class="footer__col">
+      <div class="footer__col" id="comunidade">
         <h4>Comunidade</h4>
         <a href="#">Discord</a>
         <a href="#">Instagram</a>

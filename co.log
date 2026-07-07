@@ -1,0 +1,5 @@
+[10284:18396:0707/000608.464:INFO:components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc:239] No machine level policy manager exists.
+[10284:23420:0707/000608.533:WARNING:chrome\browser\extensions\external_pref_loader.cc:294] You are using an old-style extension deployment method (external_extensions.json), which will soon be deprecated. (see http://developer.chrome.com/docs/extensions/how-to/distribute/install-extensions)
+[10284:18396:0707/000609.151:INFO:CONSOLE:0] "[DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o", source: http://localhost:8000/conta.html?modo=criar&email=joao%40email.com (0)
+[10284:18396:0707/000609.151:INFO:CONSOLE:0] "[DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o", source: http://localhost:8000/conta.html?modo=criar&email=joao%40email.com (0)
+317999 bytes written to file C:/Users/pedro/Documents/GitHub/pokeStore/conta.png
